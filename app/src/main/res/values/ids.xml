@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="tvQtyItems" type="id" />
+    <item name="btnShopCart" type="id" />
+    <item name="rvItemsList" type="id" />
+</resources>

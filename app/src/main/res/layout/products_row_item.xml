@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/prod_image"
+        android:layout_width="335dp"
+        android:layout_height="449dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:transitionName="image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/addtocatalog2"
+        android:layout_width="39dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_heart" />
+
+    <TextView
+        android:id="@+id/numberid2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif"
+        android:hint="Item ID"
+        android:lineSpacingExtra="16sp"
+        app:layout_constraintStart_toStartOf="@+id/prod_name2"
+        app:layout_constraintTop_toBottomOf="@+id/prod_name2" />
+
+    <TextView
+        android:id="@+id/category3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:fontFamily="sans-serif"
+        android:hint="Category"
+        app:layout_constraintBottom_toBottomOf="@+id/numberid2"
+        app:layout_constraintStart_toEndOf="@+id/numberid2"
+        app:layout_constraintTop_toTopOf="@+id/numberid2" />
+
+    <TextView
+        android:id="@+id/prodid3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif"
+        android:hint="id"
+        android:textColor="@android:color/background_dark"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="@+id/numberid2"
+        app:layout_constraintHorizontal_bias="0.296"
+        app:layout_constraintStart_toStartOf="@+id/numberid2"
+        app:layout_constraintTop_toBottomOf="@+id/numberid2" />
+
+    <TextView
+        android:id="@+id/prod_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:hint="Category"
+        android:textColor="#131313"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="@+id/prodid3"
+        app:layout_constraintEnd_toEndOf="@+id/category3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/category3"
+        app:layout_constraintTop_toTopOf="@+id/prodid3"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/prod_name2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="sans-serif"
+        android:hint="Product Name"
+        android:textAllCaps="false"
+        android:textColor="@android:color/background_dark"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addtocatalog2" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="216dp"
+        android:layout_height="167dp"
+        android:layout_marginEnd="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="75dp"
+        tools:srcCompat="@tools:sample/backgrounds/scenic"
+        tools:ignore="MissingConstraints" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
