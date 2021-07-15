@@ -2,12 +2,10 @@ package net.smallacademy.authenticatorapp;
 
 import android.os.Bundle;
 import android.util.Log;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
@@ -17,6 +15,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
 
 public class Catalog extends AppCompatActivity {
 
@@ -28,6 +27,7 @@ public class Catalog extends AppCompatActivity {
     private static final String TAG = "Catalog";
 
     FirebaseFirestore db;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +46,7 @@ public class Catalog extends AppCompatActivity {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
                         Map<String, Object> map = document.getData();
-                        for (Map.Entry <String, Object> entry : map.entrySet()){
+                        for (Map.Entry<String, Object> entry : map.entrySet()) {
                             adapterItems.addData((Item) entry.getValue());
                         }
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
@@ -64,6 +64,7 @@ public class Catalog extends AppCompatActivity {
         setitemRecycler(itemsList);
 
     }
+
 
     private void setitemRecycler(List<Item> itemsList) {
 

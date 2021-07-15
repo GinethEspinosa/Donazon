@@ -8,26 +8,29 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
+
 
 class AdapterItems extends RecyclerView.Adapter<AdapterItems.ProductViewHolder> {
 
     Context context;
     List<Item> itemsList;
 
-    public void addData(Item data){
+
+    public void addData(Item data) {
         this.itemsList.add(data);
         this.notifyDataSetChanged();
     }
+
 
     public AdapterItems(Context context, List<Item> itemsList) {
         this.context = context;
         this.itemsList = itemsList;
     }
+
 
     @NonNull
     @Override
@@ -36,6 +39,7 @@ class AdapterItems extends RecyclerView.Adapter<AdapterItems.ProductViewHolder> 
         View view = LayoutInflater.from(context).inflate(R.layout.products_row_item, parent, false);
         return new ProductViewHolder(view);
     }
+
 
     @Override
     public void onBindViewHolder(@NonNull final ProductViewHolder holder, int position) {
@@ -51,21 +55,25 @@ class AdapterItems extends RecyclerView.Adapter<AdapterItems.ProductViewHolder> 
                 Pair[] pairs = new Pair[1];
                 pairs[0] = new Pair<View, String>(holder.prodImage, "image");
                 ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation((Activity) context, pairs);
-               */ context.startActivity(i/*, activityOptions.toBundle()*/);
+               */
+                context.startActivity(i/*, activityOptions.toBundle()*/);
             }
         });
 
     }
+
 
     @Override
     public int getItemCount() {
         return itemsList.size();
     }
 
-    public static final class ProductViewHolder extends RecyclerView.ViewHolder{
+
+    public static final class ProductViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imageItem;
         TextView nameItem;
+
 
         public ProductViewHolder(@NonNull View itemView) {
             super(itemView);

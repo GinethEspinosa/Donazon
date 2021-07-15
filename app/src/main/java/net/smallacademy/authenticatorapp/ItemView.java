@@ -2,8 +2,8 @@ package net.smallacademy.authenticatorapp;
 
 
 import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
+
 
 public class ItemView extends AppCompatActivity {
 
