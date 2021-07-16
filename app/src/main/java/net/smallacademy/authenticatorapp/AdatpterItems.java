@@ -3,6 +3,8 @@ package net.smallacademy.authenticatorapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
+import java.net.URL;
 import java.util.List;
 
 
@@ -43,8 +48,15 @@ class AdapterItems extends RecyclerView.Adapter<AdapterItems.ProductViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull final ProductViewHolder holder, int position) {
+        /*try{
+            URL url = new URL (itemsList.get(position).getImage());
+            Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
+            holder.imageItem.setImageBitmap(bmp);
+        }
+        catch(Exception e){
 
-        holder.imageItem.setImageResource(itemsList.get(position).getImage());
+        }*/
+        Picasso.get().load(itemsList.get(position).getImage()).into(holder.imageItem);
         holder.nameItem.setText(itemsList.get(position).getNameItem());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -79,7 +91,7 @@ class AdapterItems extends RecyclerView.Adapter<AdapterItems.ProductViewHolder> 
             super(itemView);
 
             imageItem = itemView.findViewById(R.id.imageView);
-            nameItem = itemView.findViewById(R.id.prod_name2);
+            nameItem = itemView.findViewById(R.id.nameItem);
 
         }
     }

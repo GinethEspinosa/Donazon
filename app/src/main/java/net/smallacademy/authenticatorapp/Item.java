@@ -6,10 +6,10 @@ public class Item {
     String nameItem;
     String description;
     String category;
-    Integer imageItem;
+    String imageItem;
 
 
-    public Item(Integer idItem, String nameItem, String description, String category, Integer imageItem) {
+    public Item(Integer idItem, String nameItem, String description, String category, String imageItem) {
         this.idItem = idItem;
         this.nameItem = nameItem;
         this.description = description;
@@ -58,12 +58,12 @@ public class Item {
     }
 
 
-    public Integer getImage() {
+    public String getImage() {
         return imageItem;
     }
 
 
-    public void setImage(Integer imageItem) {
+    public void setImage(String imageItem) {
         this.imageItem = imageItem;
     }
 }
