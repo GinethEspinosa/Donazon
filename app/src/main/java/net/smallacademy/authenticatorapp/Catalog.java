@@ -4,10 +4,12 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
@@ -41,6 +43,8 @@ public class Catalog extends AppCompatActivity {
         List<Item> itemsList = new ArrayList<Item>();
 
         //aquí deberíamos ingresar el código para ingreso automático
+
+        //APPLIANCES//
         DocumentReference docRef = db.collection("CATEGORIES").document("APPLIANCES");
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -51,14 +55,8 @@ public class Catalog extends AppCompatActivity {
                     if (document.exists()) {
                         Map<String, Object> map = document.getData();
 
-                        Item item = new Item(((Long)map.get("index")).intValue(), (String)map.get("categoryName"),"", (String)map.get("categoryName"), (String)map.get("icon") );
+                        Item item = new Item(((Long) map.get("index")).intValue(), (String) map.get("categoryName"), "", (String) map.get("categoryName"), (String) map.get("icon"));
                         adapterItems.addData(item);
-
-
-
-                        //for (Map.Entry<String, Object> entry : map.entrySet()) {
-                         //   adapterItems.addData((Item) entry.getValue());
-                        //}
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                     } else {
                         Log.d(TAG, "No such document");
@@ -68,9 +66,10 @@ public class Catalog extends AppCompatActivity {
                 }
             }
         });
+        //APPLIANCES//
 
-      //  itemsList.add(new Item(1, "Japanese Cherry Blossom", "250 ml", "$ 17.00", R.drawable.prod2));
-        DocumentReference docRef = db.collection("CATEGORIES").document("APPLIANCES");
+        //ELECTRONICS//
+        docRef = db.collection("CATEGORIES").document("ELECTRONICS");
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -80,14 +79,8 @@ public class Catalog extends AppCompatActivity {
                     if (document.exists()) {
                         Map<String, Object> map = document.getData();
 
-                        Item item = new Item(((Long)map.get("index")).intValue(), (String)map.get("categoryName"),"", (String)map.get("categoryName"), (String)map.get("icon") );
+                        Item item = new Item(((Long) map.get("index")).intValue(), (String) map.get("categoryName"), "", (String) map.get("categoryName"), (String) map.get("icon"));
                         adapterItems.addData(item);
-
-
-
-                        //for (Map.Entry<String, Object> entry : map.entrySet()) {
-                        //   adapterItems.addData((Item) entry.getValue());
-                        //}
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                     } else {
                         Log.d(TAG, "No such document");
@@ -97,6 +90,9 @@ public class Catalog extends AppCompatActivity {
                 }
             }
         });
+        //ELECTRONICS//
+
+        //BOOKS//
         docRef = db.collection("CATEGORIES").document("BOOKS");
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -107,14 +103,8 @@ public class Catalog extends AppCompatActivity {
                     if (document.exists()) {
                         Map<String, Object> map = document.getData();
 
-                        Item item = new Item(((Long)map.get("index")).intValue(), (String)map.get("categoryName"),"", (String)map.get("categoryName"), (String)map.get("icon") );
+                        Item item = new Item(((Long) map.get("index")).intValue(), (String) map.get("categoryName"), "", (String) map.get("categoryName"), (String) map.get("icon"));
                         adapterItems.addData(item);
-
-
-
-                        //for (Map.Entry<String, Object> entry : map.entrySet()) {
-                        //   adapterItems.addData((Item) entry.getValue());
-                        //}
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                     } else {
                         Log.d(TAG, "No such document");
@@ -124,7 +114,10 @@ public class Catalog extends AppCompatActivity {
                 }
             }
         });
-        DocumentReference docRef = db.collection("CATEGORIES").document("APPLIANCES");
+        //ELECTRONICS//
+
+        //FURNITURE//
+        docRef = db.collection("CATEGORIES").document("FURNITURE");
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -134,14 +127,8 @@ public class Catalog extends AppCompatActivity {
                     if (document.exists()) {
                         Map<String, Object> map = document.getData();
 
-                        Item item = new Item(((Long)map.get("index")).intValue(), (String)map.get("categoryName"),"", (String)map.get("categoryName"), (String)map.get("icon") );
+                        Item item = new Item(((Long) map.get("index")).intValue(), (String) map.get("categoryName"), "", (String) map.get("categoryName"), (String) map.get("icon"));
                         adapterItems.addData(item);
-
-
-
-                        //for (Map.Entry<String, Object> entry : map.entrySet()) {
-                        //   adapterItems.addData((Item) entry.getValue());
-                        //}
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                     } else {
                         Log.d(TAG, "No such document");
@@ -151,6 +138,103 @@ public class Catalog extends AppCompatActivity {
                 }
             }
         });
+        //FURNITURE//
+
+        //MOBILES//
+        docRef = db.collection("CATEGORIES").document("MOBILES");
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        Map<String, Object> map = document.getData();
+
+                        Item item = new Item(((Long) map.get("index")).intValue(), (String) map.get("categoryName"), "", (String) map.get("categoryName"), (String) map.get("icon"));
+                        adapterItems.addData(item);
+                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                    } else {
+                        Log.d(TAG, "No such document");
+                    }
+                } else {
+                    Log.e(TAG, "get failed with ", task.getException());
+                }
+            }
+        });
+        //MOBILES//
+
+        //SHOES//
+        docRef = db.collection("CATEGORIES").document("SHOES");
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        Map<String, Object> map = document.getData();
+
+                        Item item = new Item(((Long) map.get("index")).intValue(), (String) map.get("categoryName"), "", (String) map.get("categoryName"), (String) map.get("icon"));
+                        adapterItems.addData(item);
+                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                    } else {
+                        Log.d(TAG, "No such document");
+                    }
+                } else {
+                    Log.e(TAG, "get failed with ", task.getException());
+                }
+            }
+        });
+        //SHOES//
+
+        //SPORTS//
+        docRef = db.collection("CATEGORIES").document("SPORTS");
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        Map<String, Object> map = document.getData();
+
+                        Item item = new Item(((Long) map.get("index")).intValue(), (String) map.get("categoryName"), "", (String) map.get("categoryName"), (String) map.get("icon"));
+                        adapterItems.addData(item);
+                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                    } else {
+                        Log.d(TAG, "No such document");
+                    }
+                } else {
+                    Log.e(TAG, "get failed with ", task.getException());
+                }
+            }
+        });
+        //SPORTS//
+
+        //TOYS//
+        docRef = db.collection("CATEGORIES").document("TOYS");
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        Map<String, Object> map = document.getData();
+
+                        Item item = new Item(((Long) map.get("index")).intValue(), (String) map.get("categoryName"), "", (String) map.get("categoryName"), (String) map.get("icon"));
+                        adapterItems.addData(item);
+                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                    } else {
+                        Log.d(TAG, "No such document");
+                    }
+                } else {
+                    Log.e(TAG, "get failed with ", task.getException());
+                }
+            }
+        });
+        //TOYS//
 
         setitemRecycler(itemsList);
 
