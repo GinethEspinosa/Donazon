@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,7 +24,6 @@ class AdapterItems extends RecyclerView.Adapter<AdapterItems.ProductViewHolder> 
 
     Context context;
     List<Item> itemsList;
-
 
     public void addData(Item data) {
         this.itemsList.add(data);
@@ -40,7 +40,6 @@ class AdapterItems extends RecyclerView.Adapter<AdapterItems.ProductViewHolder> 
     @NonNull
     @Override
     public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
         View view = LayoutInflater.from(context).inflate(R.layout.products_row_item, parent, false);
         return new ProductViewHolder(view);
     }
@@ -48,51 +47,38 @@ class AdapterItems extends RecyclerView.Adapter<AdapterItems.ProductViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull final ProductViewHolder holder, int position) {
-        /*try{
-            URL url = new URL (itemsList.get(position).getImage());
-            Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-            holder.imageItem.setImageBitmap(bmp);
-        }
-        catch(Exception e){
-
-        }*/
         Picasso.get().load(itemsList.get(position).getImage()).into(holder.imageItem);
         holder.nameItem.setText(itemsList.get(position).getNameItem());
+        holder.desc.setText(itemsList.get(position).getDescription());
+        holder.ID.setText(itemsList.get(position).getIdItem().toString());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(context, ItemView.class);
-/*
-                Pair[] pairs = new Pair[1];
-                pairs[0] = new Pair<View, String>(holder.prodImage, "image");
-                ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation((Activity) context, pairs);
-               */
                 context.startActivity(i/*, activityOptions.toBundle()*/);
             }
         });
 
     }
 
-
     @Override
     public int getItemCount() {
         return itemsList.size();
     }
 
-
     public static final class ProductViewHolder extends RecyclerView.ViewHolder {
-
         ImageView imageItem;
         TextView nameItem;
-
+        TextView desc;
+        TextView ID;
 
         public ProductViewHolder(@NonNull View itemView) {
             super(itemView);
-
             imageItem = itemView.findViewById(R.id.imageView);
             nameItem = itemView.findViewById(R.id.nameItem);
-
+            desc = itemView.findViewById(R.id.prod_category);
+            ID = itemView.findViewById(R.id.prodid3);
         }
     }
 }

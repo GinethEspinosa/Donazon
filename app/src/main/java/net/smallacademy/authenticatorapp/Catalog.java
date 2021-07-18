@@ -55,7 +55,7 @@ public class Catalog extends AppCompatActivity {
                     if (document.exists()) {
                         Map<String, Object> map = document.getData();
 
-                        Item item = new Item(((Long) map.get("index")).intValue(), (String) map.get("categoryName"), "", (String) map.get("categoryName"), (String) map.get("icon"));
+                        Item item = new Item(((Long) map.get("ID")).intValue(), (String) map.get("categoryName"), (String) map.get("description"), (String) map.get("categoryName"), (String) map.get("icon"));
                         adapterItems.addData(item);
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                     } else {
@@ -79,7 +79,7 @@ public class Catalog extends AppCompatActivity {
                     if (document.exists()) {
                         Map<String, Object> map = document.getData();
 
-                        Item item = new Item(((Long) map.get("index")).intValue(), (String) map.get("categoryName"), "", (String) map.get("categoryName"), (String) map.get("icon"));
+                        Item item = new Item(((Long) map.get("ID")).intValue(), (String) map.get("categoryName"), (String) map.get("description"), (String) map.get("categoryName"), (String) map.get("icon"));
                         adapterItems.addData(item);
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                     } else {
@@ -103,7 +103,7 @@ public class Catalog extends AppCompatActivity {
                     if (document.exists()) {
                         Map<String, Object> map = document.getData();
 
-                        Item item = new Item(((Long) map.get("index")).intValue(), (String) map.get("categoryName"), "", (String) map.get("categoryName"), (String) map.get("icon"));
+                        Item item = new Item(((Long) map.get("ID")).intValue(), (String) map.get("categoryName"), (String) map.get("description"), (String) map.get("categoryName"), (String) map.get("icon"));
                         adapterItems.addData(item);
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                     } else {
@@ -127,7 +127,7 @@ public class Catalog extends AppCompatActivity {
                     if (document.exists()) {
                         Map<String, Object> map = document.getData();
 
-                        Item item = new Item(((Long) map.get("index")).intValue(), (String) map.get("categoryName"), "", (String) map.get("categoryName"), (String) map.get("icon"));
+                        Item item = new Item(((Long) map.get("ID")).intValue(), (String) map.get("categoryName"), (String) map.get("description"), (String) map.get("categoryName"), (String) map.get("icon"));
                         adapterItems.addData(item);
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                     } else {
@@ -151,7 +151,7 @@ public class Catalog extends AppCompatActivity {
                     if (document.exists()) {
                         Map<String, Object> map = document.getData();
 
-                        Item item = new Item(((Long) map.get("index")).intValue(), (String) map.get("categoryName"), "", (String) map.get("categoryName"), (String) map.get("icon"));
+                        Item item = new Item(((Long) map.get("ID")).intValue(), (String) map.get("categoryName"), (String) map.get("description"), (String) map.get("categoryName"), (String) map.get("icon"));
                         adapterItems.addData(item);
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                     } else {
@@ -175,7 +175,7 @@ public class Catalog extends AppCompatActivity {
                     if (document.exists()) {
                         Map<String, Object> map = document.getData();
 
-                        Item item = new Item(((Long) map.get("index")).intValue(), (String) map.get("categoryName"), "", (String) map.get("categoryName"), (String) map.get("icon"));
+                        Item item = new Item(((Long) map.get("ID")).intValue(), (String) map.get("categoryName"), (String) map.get("description"), (String) map.get("categoryName"), (String) map.get("icon"));
                         adapterItems.addData(item);
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                     } else {
@@ -199,7 +199,7 @@ public class Catalog extends AppCompatActivity {
                     if (document.exists()) {
                         Map<String, Object> map = document.getData();
 
-                        Item item = new Item(((Long) map.get("index")).intValue(), (String) map.get("categoryName"), "", (String) map.get("categoryName"), (String) map.get("icon"));
+                        Item item = new Item(((Long) map.get("ID")).intValue(), (String) map.get("categoryName"), (String) map.get("description"), (String) map.get("categoryName"), (String) map.get("icon"));
                         adapterItems.addData(item);
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                     } else {
@@ -223,7 +223,7 @@ public class Catalog extends AppCompatActivity {
                     if (document.exists()) {
                         Map<String, Object> map = document.getData();
 
-                        Item item = new Item(((Long) map.get("index")).intValue(), (String) map.get("categoryName"), "", (String) map.get("categoryName"), (String) map.get("icon"));
+                        Item item = new Item(((Long) map.get("ID")).intValue(), (String) map.get("categoryName"), (String) map.get("description"), (String) map.get("categoryName"), (String) map.get("icon"));
                         adapterItems.addData(item);
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                     } else {
