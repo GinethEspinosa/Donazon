@@ -50,22 +50,8 @@ public class MainActivity extends AppCompatActivity {
         fStore = FirebaseFirestore.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
 
-        /*StorageReference profileRef = storageReference.child("users/"+fAuth.getCurrentUser().getUid()+"/profile.jpg");
-        profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override
-            public void onSuccess(Uri uri) {
-                Picasso.get().load(uri).into(profileImage);
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(MainActivity.this, "We need to upload a profile picture", Toast.LENGTH_SHORT).show();
-            }
-        });*/
-
         resendCode = findViewById(R.id.resendCode);
         verifyMsg = findViewById(R.id.verifyMsg);
-
 
         userId = fAuth.getCurrentUser().getUid();
         user = fAuth.getCurrentUser();
@@ -93,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
             });
         }
 
-
         DocumentReference documentReference = fStore.collection("users").document(userId);
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
@@ -108,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
 
         resetPassLocal.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -161,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
                 i.putExtra("email", email.getText().toString());
                 i.putExtra("phone", phone.getText().toString());
                 startActivity(i);
-//
+                //
 
             }
         });
@@ -176,15 +160,12 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 
-
     public void onCatalogClick(View v) {
         // open gallery
         Intent i = new Intent(v.getContext(), Catalog.class);
 
         startActivity(i);
-//
+        //
 
     }
-
-
 }

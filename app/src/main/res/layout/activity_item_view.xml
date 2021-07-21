@@ -130,18 +130,18 @@
 
     <ImageView
         android:id="@+id/ItemImage"
-        android:layout_width="219dp"
-        android:layout_height="175dp"
+        android:layout_width="211dp"
+        android:layout_height="165dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.137"
+        app:layout_constraintVertical_bias="0.097"
         tools:src="@tools:sample/backgrounds/scenic" />
 
     <TextView

@@ -54,7 +54,6 @@ public class Register extends AppCompatActivity {
             finish();
         }
 
-
         mRegisterBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -130,7 +129,6 @@ public class Register extends AppCompatActivity {
                 });
             }
         });
-
 
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override

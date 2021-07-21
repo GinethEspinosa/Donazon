@@ -44,7 +44,7 @@
             android:id="@+id/itemname"
             android:layout_width="315dp"
             android:layout_height="34dp"
-            android:layout_marginBottom="620dp"
+            android:layout_marginBottom="612dp"
             android:fontFamily="sans-serif"
             android:hint="Insert Product Name"
             android:textColor="@android:color/background_dark"
@@ -52,7 +52,7 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.318"
+            app:layout_constraintHorizontal_bias="0.306"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
@@ -139,6 +139,6 @@
         app:layout_constraintEnd_toStartOf="@+id/options"
         app:layout_constraintStart_toEndOf="@+id/returntocatalog"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.307" />
+        app:layout_constraintVertical_bias="0.432" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

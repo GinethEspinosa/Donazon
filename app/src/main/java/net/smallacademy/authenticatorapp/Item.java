@@ -1,13 +1,11 @@
 package net.smallacademy.authenticatorapp;
 
 public class Item {
-
     Integer idItem;
     String nameItem;
     String description;
     String category;
     String imageItem;
-
 
     public Item(Integer idItem, String nameItem, String description, String category, String imageItem) {
         this.idItem = idItem;
@@ -16,7 +14,6 @@ public class Item {
         this.category = category;
         this.imageItem = imageItem;
     }
-
 
     public Integer getIdItem() {
         return idItem;

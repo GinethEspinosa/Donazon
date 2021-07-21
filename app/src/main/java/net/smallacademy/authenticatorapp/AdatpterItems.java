@@ -24,18 +24,14 @@ class AdapterItems extends RecyclerView.Adapter<AdapterItems.ProductViewHolder> 
 
     Context context;
     List<Item> itemsList;
-
     public void addData(Item data) {
         this.itemsList.add(data);
         this.notifyDataSetChanged();
     }
-
-
     public AdapterItems(Context context, List<Item> itemsList) {
         this.context = context;
         this.itemsList = itemsList;
     }
-
 
     @NonNull
     @Override
@@ -44,14 +40,12 @@ class AdapterItems extends RecyclerView.Adapter<AdapterItems.ProductViewHolder> 
         return new ProductViewHolder(view);
     }
 
-
     @Override
     public void onBindViewHolder(@NonNull final ProductViewHolder holder, int position) {
         Picasso.get().load(itemsList.get(position).getImage()).into(holder.imageItem);
         holder.nameItem.setText(itemsList.get(position).getNameItem());
         holder.desc.setText(itemsList.get(position).getDescription());
         holder.ID.setText(itemsList.get(position).getIdItem().toString());
-
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

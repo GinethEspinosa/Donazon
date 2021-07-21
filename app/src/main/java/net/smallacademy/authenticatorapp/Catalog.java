@@ -21,9 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-
 public class Catalog extends AppCompatActivity {
-
     RecyclerView itemRecycler;
     AdapterItems adapterItems;
 
@@ -32,8 +30,6 @@ public class Catalog extends AppCompatActivity {
     private static final String TAG = "Catalog";
 
     FirebaseFirestore db;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +38,7 @@ public class Catalog extends AppCompatActivity {
 
         List<Item> itemsList = new ArrayList<Item>();
 
-        //aquí deberíamos ingresar el código para ingreso automático
+        //Here we need to add more code to add more items automatically
 
         //APPLIANCES//
         DocumentReference docRef = db.collection("CATEGORIES").document("APPLIANCES");

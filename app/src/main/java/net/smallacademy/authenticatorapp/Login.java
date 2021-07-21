@@ -24,7 +24,6 @@ public class Login extends AppCompatActivity {
     ProgressBar progressBar;
     FirebaseAuth fAuth;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +36,6 @@ public class Login extends AppCompatActivity {
         mLoginBtn = findViewById(R.id.loginBtn);
         mCreateBtn = findViewById(R.id.createText);
         forgotTextLink = findViewById(R.id.forgotPassword);
-
 
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,7 +128,5 @@ public class Login extends AppCompatActivity {
 
             }
         });
-
-
     }
 }
